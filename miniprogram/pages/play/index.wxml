@@ -1,0 +1,93 @@
+<cu-custom isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">开始答题</view>
+</cu-custom>
+<view class="container">
+    <view class="play">
+        <view class="info">
+            <view class="level">第 {{level}} 关</view>
+            <view class="point">
+                <text style="color: #ebb548" class="cuIcon cuIcon-coin lg"></text>
+                <text class="text">{{point}}</text>
+            </view>
+        </view>
+        <view class="panel">
+            <block wx:for="{{idiomArray}}" wx:for-item="item">
+                <view class="item">
+                    {{position===index ? '?' : item}}
+                </view>
+            </block>
+        </view>
+        <view class="btnGroup">
+            <button class="btn1" open-type="share" bind:tap="share">
+                求助好友
+            </button>
+            <button class="btn2" open-type="share" bind:tap="share">
+                获取金币
+            </button>
+        </view>
+        <view class="answer">
+            <block wx:for="{{answers}}" wx:for-item="item">
+                <view class="item {{answer===item ? 'current' : ''}}" bind:tap="select" data-text="{{item}}">
+                    <text>{{item}}</text>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>
+
+<view class="cu-modal {{success ? 'show':''}} modal-success">
+    <view class="cu-dialog">
+        <view class="padding-xl content">
+            <image mode="widthFix" src="/images/success.png"></image>
+            <view class="text">恭喜闯关成功</view>
+            <view class="tips">连续答题有机会得红包哦</view>
+            <button bind:tap="next">进入下一关</button>
+        </view>
+        <view wx:if="{{false}}" class="transparent" style="height: 80rpx;margin: 20rpx auto;"></view>
+        <view wx:if="{{false}}" class="content ad">
+            <view class="item">
+                <image src="https://wx.qlogo.cn/mmhead/Q3auHgzwzM7etLQibmJLHSwRdpqCHzWib3T3RRnUgvxXsXc8byVIxnKg/0"></image>
+                <text>哈哈哈哈哈</text>
+            </view>
+            <view class="item">
+                <image src="https://wx.qlogo.cn/mmhead/Q3auHgzwzM7etLQibmJLHSwRdpqCHzWib3T3RRnUgvxXsXc8byVIxnKg/0"></image>
+                <text>哈哈哈哈哈</text>
+            </view>
+            <view class="item">
+                <image src="https://wx.qlogo.cn/mmhead/Q3auHgzwzM7etLQibmJLHSwRdpqCHzWib3T3RRnUgvxXsXc8byVIxnKg/0"></image>
+                <text>哈哈哈哈哈</text>
+            </view>
+            <view class="item">
+                <image src="https://wx.qlogo.cn/mmhead/Q3auHgzwzM7etLQibmJLHSwRdpqCHzWib3T3RRnUgvxXsXc8byVIxnKg/0"></image>
+                <text>哈哈哈哈哈</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="cu-modal {{showRedPackage ? 'show':''}} modal-redPackage">
+    <view class="cu-dialog">
+        <view class="top">
+            <view class="content">
+                <view class="title">恭喜</view>
+                <view class="info">您获得一个现金红包</view>
+            </view>
+            <view class="redPackageInfo">
+                <view class="open" bind:tap="open" wx:if="{{showRedPackage&&!openRedPackage}}">
+                    <view class="line">
+                        <image style="width: 100rpx;height: 100rpx" src="/images/open.png"></image>
+                    </view>
+                </view>
+                <view class="money" wx:if="{{showRedPackage&&(redPackageMoney>0)&&openRedPackage}}">
+                    {{redPackageMoney}}元
+                </view>
+            </view>
+        </view>
+        <view class="footer">
+            <view class="action">
+                <text bind:tap="closeRedPackage" class="cuIcon-roundclose" style="font-size: 56rpx;"></text>
+            </view>
+        </view>
+    </view>
+</view>

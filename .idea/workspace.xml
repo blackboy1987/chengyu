@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c0a4eda8-3409-41f4-af8f-a2f9ed051955" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Wechat mini program page js file(Page API)" />
+        <option value="Wechat mini program page json file(Page API)" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1jLlYsinoEpZ9qCzr5jOptZQjME" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/miniprogram/utils" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\black\Desktop\chengyu_ts\chengyu\miniprogram\images" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/miniprogram/utils" />
+      <recent name="C:\Users\black\Desktop\chengyu_ts\chengyu\miniprogram\utils" />
+      <recent name="C:\Users\black\Desktop\chengyu_ts\chengyu\miniprogram\images" />
+      <recent name="C:\Users\black\Desktop\chengyu_ts\chengyu\miniprogram" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c0a4eda8-3409-41f4-af8f-a2f9ed051955" name="Default Changelist" comment="" />
+      <created>1603591303737</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603591303737</updated>
+      <workItem from="1603591304836" duration="21841000" />
+      <workItem from="1603634631909" duration="7810000" />
+      <workItem from="1603642736133" duration="16241000" />
+      <workItem from="1603705447664" duration="92000" />
+      <workItem from="1603715688774" duration="2190000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/miniprogram/utils/wxUtils.js" />
+        <option value="$PROJECT_DIR$/miniprogram/utils/common.js" />
+        <option value="$PROJECT_DIR$/miniprogram/utils/constants.js" />
+        <option value="$PROJECT_DIR$/miniprogram/utils/util.js" />
+        <option value="$PROJECT_DIR$/miniprogram/utils/request.js" />
+        <option value="$PROJECT_DIR$/miniprogram/pages/index/index.js" />
+        <option value="$PROJECT_DIR$/miniprogram/pages/logs/logs.js" />
+        <option value="$PROJECT_DIR$/miniprogram/app.js" />
+        <option value="$PROJECT_DIR$/miniprogram/utils/request1.js" />
+      </list>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="496" y="109" key="FileChooserDialogImpl" timestamp="1603690883767">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="496" y="109" key="FileChooserDialogImpl/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1603690883767" />
+  </component>
+</project>
