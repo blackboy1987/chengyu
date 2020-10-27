@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e34d2748-7c5d-4791-9ded-d6b043ee4dd3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Wechat mini program page js file(Page API)" />
+        <option value="Wechat mini program page json file(Page API)" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1jRMeP9pPDHhuaC7Oo7tYgLLaYL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/utils" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\black\Desktop\chengyu_ts\chengyu_js\utils" />
+      <recent name="C:\Users\black\Desktop\chengyu_ts\chengyu_js" />
+      <recent name="C:\Users\black\Desktop\chengyu_ts\chengyu_js\pages\index" />
+      <recent name="C:\Users\black\Desktop\chengyu_ts\chengyu_js\pages\play" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e34d2748-7c5d-4791-9ded-d6b043ee4dd3" name="Default Changelist" comment="" />
+      <created>1603762546208</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603762546208</updated>
+      <workItem from="1603762547436" duration="17736000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2827" y="355" width="745" height="690" key="find.popup" timestamp="1603764947236">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2827" y="355" width="745" height="690" key="find.popup/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1603764947236" />
+  </component>
+</project>

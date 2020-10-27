@@ -1,0 +1,5 @@
+/* colorui/components/cu-custom.wxss */
+.cu-custom {
+    background: #5236af;
+    color:#FFF;
+}

@@ -1,0 +1,26 @@
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+page{
+  height: 100vh;
+  background: #412b8d;
+}
+
+.container {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+
+.swiper{
+  color: #FFF;
+}
+.cuIcon{
+  font-size:42rpx;
+  display: inline-block;
+}
+
+.transparent{
+  background: transparent !important;
+}
