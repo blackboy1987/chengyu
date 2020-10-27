@@ -73,6 +73,13 @@
           "id": -1,
           "name": "pages/share/index",
           "pathName": "pages/share/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/question/index",
+          "pathName": "pages/question/index",
           "scene": null
         }
       ]

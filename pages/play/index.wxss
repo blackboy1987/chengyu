@@ -27,7 +27,7 @@ page{
     background: rgba(116,94,192,.4);
 }
 .play>.info>.point>.text{
-    margin-left: 16rpx;
+    margin-left: 10rpx;
 }
 .play>.panel{
     background: #2b673c;

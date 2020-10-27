@@ -1,0 +1,33 @@
+.item{
+    width: 90%;
+    background: #fff;
+    margin:24rpx auto;
+    border-radius: 12rpx;
+    display: flex;
+    padding:24rpx;
+    justify-content: center;
+    align-items: center;
+}
+.item>image{
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+}
+.item>.right{
+    border-radius: 10rpx;
+    flex:2;
+    color:#000;
+    padding-left:32rpx;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.item>.right>.title{
+    font-size: 28rpx;
+    font-weight: 600;
+}
+.item>.go{
+    background: #ed927f;
+    padding:8rpx 24rpx;
+    border-radius: 30rpx;
+}

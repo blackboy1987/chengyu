@@ -20,8 +20,11 @@
     color: #fff9ff;
 }
 
-.ad{
+.gameTitle{
     height: 260rpx;
+    line-height: 260rpx;
+    text-align: center;
+    font-size: 64rpx;
 }
 
 @keyframes typing {
@@ -147,14 +150,27 @@
 }
 
 .rank .content1 .item{
-    border-bottom: red solid 1rpx;
     display: flex;
+    align-items: center;
+    padding:8rpx 0;
+    font-size: 32rpx;
+}
+.rank .content1 .item>.index{
+    margin-right: 32rpx;
 
 }
 .rank .content1 .item>image{
-    width: 60rpx;
-    height: 60rpx;
-
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+}
+.rank .content1 .item>.name{
+    width: 300rpx;
+    padding-left: 16rpx;
+    text-align: left;
+}
+.rank .content1 .item>.count{
+    float: right;
 }
 
 .rank .btn{

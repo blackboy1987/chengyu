@@ -163,7 +163,6 @@ Page({
             from:'button',
             title: "来自于分享",
             path: "/pages/index/index?parentId="+getStorage("userId"),
-            imageUrl: 'http://jy.sccnn.com/zb_users/upload/2017/01/remoteimage2_20170118151850_84849.jpeg',
         };
     },
     closeRedPackage:function (e){

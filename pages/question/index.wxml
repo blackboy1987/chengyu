@@ -1,0 +1,12 @@
+<cu-custom isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">常见问题</view>
+</cu-custom>
+<view class="container">
+    <view class="item">
+        <view class="top">
+            <view class="title">小程序怎么玩</view>
+            <text class="icon icon-sort"></text>
+        </view>
+    </view>
+</view>
