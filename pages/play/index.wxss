@@ -1,0 +1,233 @@
+
+page{
+    height: 100vh;
+    background: #5236af;
+}
+
+.play{
+    background: #5236af;
+}
+
+.play>.info{
+    margin-top: 24rpx;
+    display: flex;
+    align-items: center;
+}
+.play>.info>.level{
+    flex: 3;
+    text-align: center;
+    padding: 16rpx 0 16rpx 15%;
+    font-size: 40rpx;
+}
+.play>.info>.point{
+    flex: 1;
+    padding: 16rpx;
+    border-top-left-radius: 50rpx;
+    border-bottom-left-radius: 50rpx;
+    background: rgba(116,94,192,.4);
+}
+.play>.info>.point>.text{
+    margin-left: 16rpx;
+}
+.play>.panel{
+    background: #2b673c;
+    width: 90%;
+    height: 400rpx;
+    margin:48rpx auto;
+    border-radius: 16rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 64rpx;
+    flex-wrap: wrap;
+}
+.play>.panel>.item{
+    border: #c5cef9 solid 4rpx;
+    width: 128rpx;
+    height: 128rpx;
+    border-radius: 4rpx;
+    padding:16rpx 28rpx;
+}
+
+.play>.btnGroup{
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+.play>.btnGroup>.btn1{
+    background: #db645e;
+    border-radius: 40rpx 0 0 40rpx / 40rpx 0 0 40rpx;
+    color: #fff;
+}
+.play>.btnGroup>.btn2{
+    background: #669ccb;
+    border-radius: 0 40rpx 40rpx 0 / 0 40rpx 40rpx 0;
+    color: #fff;
+}
+
+.play>.answer{
+    width: 90%;
+    margin:48rpx auto;
+    border-radius: 16rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 80rpx;
+    flex-wrap: wrap;
+}
+.play>.answer>.item{
+    border: #c5cef9 solid 2rpx;
+    width: 128rpx;
+    height: 128rpx;
+    border-radius: 4rpx;
+    text-align: center;
+}
+.play>.answer>.item.current{
+    background: #db645e;
+}
+.play>.answer>.item>text{
+    margin:0 auto;
+}
+
+
+
+.modal-success{
+
+}
+.modal-success>.cu-dialog{
+    background: transparent !important;
+}
+
+.modal-success>.cu-dialog>.content{
+    background: #ffffff;
+    border-radius: 10rpx;
+}
+
+.modal-success>.cu-dialog>.ad{
+    display: flex;
+    flex-direction: row;
+}
+.modal-success>.cu-dialog>.ad{
+    display: flex;
+    justify-content: space-around;
+}
+
+.modal-success>.cu-dialog>.ad .item{
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+    align-items: center;
+    padding:24rpx;
+}
+
+.modal-success>.cu-dialog>.ad .item>image{
+    border-radius: 10rpx;
+}
+.modal-success>.cu-dialog>.ad .item>text{
+    margin-top: 16rpx;
+    font-size: 24rpx;
+    font-weight: bold;
+    color: #494949;
+}
+
+.modal-success image{
+    width:128rpx;
+    height: 128rpx;
+}
+.modal-success .text{
+    margin-top:24rpx;
+    font-size: 36rpx;
+    font-weight: 800;
+}
+.modal-success .tips{
+    margin-top:24rpx;
+    font-size: 36rpx;
+}
+.modal-success button{
+    width: 90%;
+    margin-top: 96rpx;
+    margin-bottom: 48rpx;
+    background: #ea635d;
+    padding:32rpx auto;
+    border-radius: 48rpx;
+    color: #FFF;
+}
+
+.modal-redPackage>.cu-dialog{
+    width: 70%;
+    height: 800rpx;
+    background:transparent !important;
+}
+.modal-redPackage>.cu-dialog>.top{
+    height: 84%;
+    position: relative;
+    background: #df5553;
+}
+
+.modal-redPackage>.cu-dialog>.top>.content{
+    height: 70%;
+    border-bottom-left-radius: 200rpx;
+    border-bottom-right-radius: 200rpx;
+    box-shadow: #c24845 10px 10px 30px 5px ;
+}
+
+.modal-redPackage>.cu-dialog>.top>.content>.title{
+    font-size: 60rpx;
+    color: #FFF;
+    font-weight: 800;
+    height: 200rpx;
+    line-height: 200rpx;
+}
+
+.modal-redPackage>.cu-dialog>.top>.content>.info{
+    font-size: 32rpx;
+    color: #f6b283;
+    font-weight: bold;
+}
+
+.modal-redPackage>.cu-dialog>.top>.redPackageInfo{
+    position: absolute;
+    bottom:110rpx;
+    left:30%;
+}
+
+.modal-redPackage>.cu-dialog>.top>.redPackageInfo>.open{
+    width: 200rpx;
+    height: 200rpx;
+    padding:20rpx;
+    border-radius: 50%;
+    background: #f2c278;
+}
+.modal-redPackage>.cu-dialog>.top>.redPackageInfo>.open>.line{
+    margin:0 auto;
+    width: 160rpx;
+    height: 160rpx;
+    padding:20rpx;
+    border-radius: 50%;
+    border:#d99854 solid 10rpx;
+}
+.modal-redPackage>.cu-dialog>.top>.redPackageInfo>.money{
+    position: relative;
+    left:-20rpx;
+    top:-40rpx;
+    margin:0 auto;
+    background: #FFF;
+    height: 150rpx;
+    line-height: 150rpx;
+    width: 250rpx;
+    border-radius: 10rpx;
+    color: #d0605e;
+    font-size: 40rpx;
+    text-align: center;
+}
+
+.modal-redPackage>.cu-dialog>.footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.modal-redPackage>.cu-dialog>.footer>.action{
+    color: #FFF;
+}
