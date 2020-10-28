@@ -1,5 +1,5 @@
 import request from "./utils/request";
-import {setStorage, wxGetSystemInfo} from "./utils/wxUtils";
+import {getStorage, setStorage, wxGetSystemInfo} from "./utils/wxUtils";
 
 App({
   onLaunch() {
@@ -46,7 +46,8 @@ App({
 
               },{
                 data:{
-                  ...res.userInfo
+                  ...res.userInfo,
+                  id:getStorage("userId")
                 }
               })
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
@@ -69,5 +70,6 @@ App({
     siteInfo:{},
     systemInfo:{},
     userInfo:{},
+    token:'',
   }
 })

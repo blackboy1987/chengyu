@@ -1,4 +1,5 @@
 import request from "../../utils/request";
+import {getStorage} from "../../utils/wxUtils";
 const app = getApp()
 
 Page({
@@ -61,15 +62,29 @@ Page({
 
   onShow() {
     this.init();
+    this.updateUserInfo();
   },
   init:function (){
     const root = this;
+    if(!app.globalData.token){
+      return ;
+    }
     request("api/user/info",(res)=>{
       console.log("init",res,res.data);
       root.setData({
         userInfo:res.data,
       })
     });
+  },
+  updateUserInfo(){
+    request("api/user/update",()=>{
+
+    },{
+      data:{
+        ...app.globalData.userInfo,
+        id:getStorage("userId")
+      }
+    })
   },
   toPlay(){
     const isLogin=app.globalData.isLogin;
@@ -89,7 +104,8 @@ Page({
 
     },{
       data:{
-        ...e.detail.userInfo
+        ...e.detail.userInfo,
+        id:getStorage("userId")
       }
     })
     this.setData({
