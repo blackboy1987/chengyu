@@ -3,10 +3,14 @@
     <view slot="content">常见问题</view>
 </cu-custom>
 <view class="container">
-    <view class="item">
+    <view bind:tap="select" data-id="{{item.id}}" wx:for="{{questions}}" class="item {{current===item.id? 'current':''}}">
         <view class="top">
-            <view class="title">小程序怎么玩</view>
+            <view class="title">{{item.title}}</view>
             <text class="icon icon-sort"></text>
         </view>
+        <view class="content">{{item.content}}</view>
+    </view>
+    <view class="cu-bar btn">
+        <button class="cu-btn" bindtap="back">返回答题</button>
     </view>
 </view>

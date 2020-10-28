@@ -35,7 +35,7 @@
     "packNpmRelationList": []
   },
   "compileType": "miniprogram",
-  "libVersion": "2.13.2",
+  "libVersion": "2.12.2",
   "appid": "wx8ad3468b01a51ac6",
   "projectname": "chengyu_js",
   "debugOptions": {
@@ -80,6 +80,13 @@
           "id": -1,
           "name": "pages/question/index",
           "pathName": "pages/question/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/icon/index",
+          "pathName": "pages/icon/icon",
           "scene": null
         }
       ]

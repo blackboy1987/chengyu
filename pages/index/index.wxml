@@ -56,7 +56,7 @@
       <text class="cuIcon cuIcon-hot lg"></text>
       <text>更多好玩</text>
     </view>
-    <view class="cu-item">
+    <view bind:tap="question" class="cu-item">
       <text class="cuIcon cuIcon-service lg"></text>
       <text>常见问题</text>
     </view>

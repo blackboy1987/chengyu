@@ -142,5 +142,10 @@ Page({
         page,
       }
     })
+  },
+  question:function () {
+    wx.navigateTo({
+      url:'/pages/question/index'
+    })
   }
 })

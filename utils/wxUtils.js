@@ -1,4 +1,3 @@
-import request from "./request";
 
 export const setStorage=(key,value)=>{
     wx.setStorageSync(key,value);

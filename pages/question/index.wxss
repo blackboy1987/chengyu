@@ -4,14 +4,16 @@ page{
 }
 
 .item{
-    padding:16rpx;
     background: #FFF;
     width: 90%;
-    margin:24rpx auto;
-    border-radius: 10rpx;
+    margin:24rpx auto 0;
+    color: #b9b9b9;
+    border-radius: 2rpx;
 }
 .item>.top{
     display: flex;
+    padding:16rpx;
+    color: #393939;
 }
 .item>.top>.title{
     flex: 1;
@@ -21,4 +23,47 @@ page{
     width:48rpx;
     height:48rpx;
     color: #b9b9b9;
+}
+
+.item>.content{
+    border-top: #d7d7d7 solid 1px;
+    padding:16rpx;
+    color: #000;
+    display: none;
+}
+
+
+
+.current>.top{
+    display: flex;
+    padding:16rpx;
+    color: #a3a3a3;
+}
+.current>.top>.title{
+    flex: 1;
+}
+
+.current>.top>.icon{
+    width:48rpx;
+    height:48rpx;
+}
+
+.current>.content{
+    border-top: #d7d7d7 solid 1px;
+    padding:16rpx;
+    color: #000;
+    display: block;
+}
+
+.btn{
+    width: 90%;
+    margin: 0 auto;
+}
+.btn>button{
+    width: 100% !important;
+    background:#5236af !important;
+    color: #FFF !important;
+    font-weight: normal;
+    border-radius: 30rpx;
+    font-size: 28rpx;
 }

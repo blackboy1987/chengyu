@@ -2,11 +2,11 @@
   "pages":[
     "pages/index/index",
     "pages/play/index",
-    "pages/goods/index",
     "pages/share/index",
     "pages/moreGame/index",
     "pages/my/info/index",
-    "pages/question/index"
+    "pages/question/index",
+    "pages/icon/icon"
   ],
   "window":{
     "backgroundTextStyle": "light",
