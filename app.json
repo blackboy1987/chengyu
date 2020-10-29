@@ -1,9 +1,9 @@
 {
   "pages":[
+    "pages/my/info/index",
     "pages/index/index",
     "pages/play/index",
     "pages/moreGame/index",
-    "pages/my/info/index",
     "pages/question/index",
     "pages/icon/icon"
   ],
