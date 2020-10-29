@@ -2,7 +2,6 @@
   "pages":[
     "pages/index/index",
     "pages/play/index",
-    "pages/share/index",
     "pages/moreGame/index",
     "pages/my/info/index",
     "pages/question/index",

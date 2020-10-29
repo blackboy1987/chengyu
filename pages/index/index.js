@@ -1,5 +1,5 @@
 import request from "../../utils/request";
-import {getStorage} from "../../utils/wxUtils";
+import {getStorage, getUserInfo1, updateUserInfo} from "../../utils/wxUtils";
 const app = getApp()
 
 Page({
@@ -24,16 +24,26 @@ Page({
     }
     this.init();
     this.login();
+    updateUserInfo((isAuth)=>{
+      if(!isAuth){
+        this.setData({
+          loginModalVisible:true,
+        })
+      }
+    });
   },
 
   login(){
     const root = this;
     wx.login({
       success (res) {
-        console.log("res",res);
         if (res.code) {
           request("api/login",(res)=>{
-            console.log(res);
+            console.log(res,"api/login");
+            app.globalData.userInfo = res.data;
+            root.setData({
+              userInfo:res.data,
+            })
           },{
             data:{
               code:res.code,
@@ -54,7 +64,6 @@ Page({
               }
             }
           })
-
         }
       }
     })
@@ -62,33 +71,19 @@ Page({
 
   onShow() {
     this.init();
-    this.updateUserInfo();
   },
   init:function (){
     const root = this;
-    if(!app.globalData.token){
-      return ;
-    }
-    request("api/user/info",(res)=>{
-      console.log("init",res,res.data);
+    getUserInfo1((data)=>{
       root.setData({
-        userInfo:res.data,
-      })
+        userInfo:data,
+      });
+      app.globalData.userInfo= data;
     });
   },
-  updateUserInfo(){
-    request("api/user/update",()=>{
-
-    },{
-      data:{
-        ...app.globalData.userInfo,
-        id:getStorage("userId")
-      }
-    })
-  },
   toPlay(){
-    const isLogin=app.globalData.isLogin;
-    if(isLogin){
+    const isAuth=app.globalData.userInfo.isAuth;
+    if(isAuth){
       wx.navigateTo({
         url:'/pages/play/index'
       })
@@ -99,9 +94,13 @@ Page({
     }
   },
   getUserInfo(e) {
+    const root = this;
     app.globalData.userInfo = e.detail.userInfo;
-    request("api/user/update",()=>{
-
+    request("api/user/update",(res)=>{
+      app.globalData.userInfo = res.data;
+      root.setData({
+        userInfo:res.data,
+      })
     },{
       data:{
         ...e.detail.userInfo,

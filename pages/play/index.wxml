@@ -5,6 +5,10 @@
 <view class="container">
     <view class="play">
         <view class="info">
+            <view class="money">
+                <text style="color: #f26957" class="cuIcon cuIcon-redpacket_fill lg"></text>
+                <text class="text">{{userInfo.money || 0}}</text>
+            </view>
             <view class="level">第 {{level}} 关</view>
             <view class="point">
                 <text style="color: #ebb548" class="cuIcon cuIcon-coin lg"></text>

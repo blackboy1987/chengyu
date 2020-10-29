@@ -15,6 +15,7 @@ Page({
         openRedPackage:false,
         point:0,
         level:0,
+        userInfo:{}
     },
     onLoad: function (options) {
         this.init();
@@ -26,6 +27,7 @@ Page({
         const root = this;
         const userInfo = app.globalData.userInfo;
         root.setData({
+            userInfo,
             point:userInfo.point,
             success:false,
             showRedPackage:false,
@@ -81,7 +83,7 @@ Page({
         const idiomArray = idiom.split("");
         root.setData({
             answer:text,
-            point:point-siteInfo.deductionPoint
+            point:point-siteInfo.deductionPoint,
         });
 
         if(idiomArray[position]===text){
@@ -117,7 +119,8 @@ Page({
     discount:function (level,callback){
       request("api/discount",(res)=>{
           if(callback){
-              callback(res.data);
+              app.globalData.userInfo = res.data;
+              callback("discount",res.data);
           }
       },{
           data:{
@@ -141,10 +144,13 @@ Page({
     open:function (e){
         const root = this;
         request("api/redpackage",res=>{
+            const {money,userInfo} = res.data;
             setStorage("levelCount",0);
+            app.globalData.userInfo = userInfo;
             root.setData({
+                userInfo:userInfo,
                 openRedPackage:true,
-                redPackageMoney:res.data || 0,
+                redPackageMoney:money || 0,
             });
         },{
             data:{
@@ -162,7 +168,7 @@ Page({
         return {
             from:'button',
             title: "来自于分享",
-            path: "/pages/index/index?parentId="+getStorage("userId"),
+            path: "/pages/index/index?parentId="+getStorage(""),
         };
     },
     closeRedPackage:function (e){

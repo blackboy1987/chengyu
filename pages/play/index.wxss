@@ -19,6 +19,18 @@ page{
     padding: 16rpx 0 16rpx 15%;
     font-size: 40rpx;
 }
+
+.play>.info>.money{
+    flex: 1;
+    padding: 16rpx;
+    border-top-right-radius: 50rpx;
+    border-bottom-right-radius: 50rpx;
+    background: rgba(116,94,192,.4);
+}
+.play>.info>.money>.text{
+    margin-left: 10rpx;
+}
+
 .play>.info>.point{
     flex: 1;
     padding: 16rpx;
