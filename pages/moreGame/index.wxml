@@ -3,7 +3,7 @@
     <view slot="content">更多好玩</view>
 </cu-custom>
 <view class="container">
-    <scroll-view class="list" style="height: 1000rpx" scroll-y="{{true}}">
+    <scroll-view class="list" style="height: 600rpx" scroll-y="{{true}}">
         <view class="item">
             <image src="https://wx.qlogo.cn/mmhead/Q3auHgzwzM4KZ5pXxvpybiaBRRP3ueLjQSibug4EoaoAeEghSRWUdIPw/0"></image>
             <view class="right">
@@ -30,3 +30,4 @@
         </view>
     </scroll-view>
 </view>
+<ad unit-id="adunit-1f98f08e663fa1b7" ad-type="video" ad-theme="white"></ad>
