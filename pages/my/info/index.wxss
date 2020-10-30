@@ -1,0 +1,31 @@
+page{
+    background: #F6F7F9;
+}
+.container{
+    color: #676767;
+}
+.container .title{
+    width: 160rpx;
+    min-width: 160rpx;
+    max-width: 160rpx;
+}
+
+.bottom{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.bottom .btn{
+    background: #c8c8c8;
+    color:#FFF;
+    height: 100rpx;
+    line-height: 100rpx;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.bottom .active{
+    background: #eb414a;
+}

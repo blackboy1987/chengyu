@@ -69,7 +69,7 @@
         </view>
     </view>
 </view>
-
+<ad unit-id="adunit-5d392fcce4af1bf9"></ad>
 <view class="cu-modal {{showRedPackage ? 'show':''}} modal-redPackage">
     <view class="cu-dialog">
         <view class="top">

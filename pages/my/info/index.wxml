@@ -2,3 +2,22 @@
     <view slot="backText">返回</view>
     <view slot="content">我的信息</view>
 </cu-custom>
+<view class="container">
+    <form>
+        <view class="cu-form-group margin-top">
+            <view class="title">姓　名</view>
+            <input focus="{{true}}" placeholder="请输入姓名" data-type="name" bind:input="inputName"></input>
+        </view>
+        <view class="cu-form-group">
+            <view class="title">手机号</view>
+            <input type="number" placeholder="请输入手机号" data-type="mobile" bind:input="inputName"></input>
+        </view>
+        <view class="cu-form-group">
+            <view class="title">微信号</view>
+            <input placeholder="请输入微信号" data-type="wechat" bind:input="inputName"></input>
+        </view>
+    </form>
+</view>
+<view class="bottom">
+    <view class="btn {{active ? 'active' : ''}}" bind:tap="save">保存信息</view>
+</view>
