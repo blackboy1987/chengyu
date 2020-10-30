@@ -1,6 +1,9 @@
 import request from "../../utils/request";
 import {getStorage, getUserInfo1, updateUserInfo} from "../../utils/wxUtils";
+import {createInterstitialAd, createRewardedVideoAd} from "../../utils/adUtils";
 const app = getApp()
+let rewardedVideoAd = null;
+let interstitialAd = null;
 
 Page({
   data: {
@@ -12,6 +15,8 @@ Page({
     rankList:[],
   },
   onLoad(options) {
+    this.createRewardedVideoAd();
+    this.createInterstitialAd();
     const {parentId} = options;
     if(parentId!=null){
      request("api/share",()=>{
@@ -162,5 +167,22 @@ Page({
     wx.navigateTo({
       url:'/pages/question/index'
     })
-  }
+  },
+  createRewardedVideoAd:function (){
+    const root = this;
+    rewardedVideoAd = createRewardedVideoAd({
+      onClose:function (res){
+        const {isEnded} = res;
+        if(isEnded){
+          console.log("看完了");
+        }else{
+          console.log("未看完");
+        }
+      }
+    });
+  },
+  createInterstitialAd:function (){
+    const root = this;
+    interstitialAd = createInterstitialAd()
+  },
 })

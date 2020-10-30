@@ -1,0 +1,63 @@
+import {getStorage} from "./wxUtils";
+
+export const errMap = {
+    1000:"后端接口调用失败",
+    1001:"参数错误",
+    1002:"广告单元无效",
+    1003:"内部错误",
+    1004:"无合适的广告",
+    1005:"广告组件审核中",
+    1006:"广告组件被驳回",
+    1007:"广告组件被封禁",
+    1008:"广告单元已关闭",
+}
+
+
+export const createRewardedVideoAd=function (callback){
+    const siteInfo = getStorage("siteInfo");
+    if(wx.createRewardedVideoAd){
+        const rewardedVideoAd = wx.createRewardedVideoAd({ adUnitId: siteInfo.rewardedVideoAdId });
+        rewardedVideoAd.onLoad(() => {
+            if(callback.onLoad){
+                callback.onLoad();
+            }
+        });
+        rewardedVideoAd.onError((err) => {
+            if(callback.onError){
+                callback.onError(err);
+            }
+        });
+        rewardedVideoAd.onClose((res) => {
+            if(callback.onClose){
+                callback.onClose(res);
+            }
+        });
+        return rewardedVideoAd;
+    }
+    return null;
+
+}
+
+export const createInterstitialAd=function (callback){
+    const siteInfo = getStorage("siteInfo");
+    if(wx.createInterstitialAd){
+        const interstitialAd = wx.createInterstitialAd({ adUnitId: siteInfo.interstitialAdId });
+        interstitialAd.onLoad(() => {
+            if(callback.onLoad){
+                callback.onLoad();
+            }
+        });
+        interstitialAd.onError((err) => {
+            if(callback.onError){
+                callback.onError(err);
+            }
+        });
+        interstitialAd.onClose((res) => {
+            if(callback.onClose){
+                callback.onClose(res);
+            }
+        });
+
+        return interstitialAd;
+    }
+}
