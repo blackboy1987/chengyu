@@ -1,0 +1,71 @@
+.friend{
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding:24rpx;
+    width: 90%;
+    border-radius: 16rpx;
+    margin: 16rpx auto;
+}
+.friend>.title{
+    color: #706f74;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    font-size: 32rpx;
+}
+.friend>.content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 120rpx;
+    line-height: 120rpx;
+}
+.friend>.content>.icon{
+}
+.friend>.content>.icon>image{
+    width: 80rpx;
+    height: 80rpx;
+}
+.my{
+    width: 90%;
+    margin:16rpx auto;
+}
+.my>view{
+    text-align: center;
+    background: #ffffff;
+    color:#e4786c;
+    font-size: 28rpx;
+    font-weight: 600;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 40rpx;
+}
+
+.invited{
+    width: 90%;
+    margin:16rpx auto;
+}
+.invited>button{
+    text-align: center !important;
+    background: #ec7068 !important;
+    color:#fff !important;
+    font-size: 32rpx !important;
+    font-weight: 600 !important;
+    border-radius: 60rpx !important;
+}
+
+.visitVideo{
+    width: 90%;
+    margin:16rpx auto;
+}
+.visitVideo>view{
+    text-align: center;
+    background: #628ff6;
+    color:#fff;
+    font-size: 32rpx;
+    font-weight: 600;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-radius: 60rpx;
+}

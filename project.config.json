@@ -87,6 +87,20 @@
           "id": -1,
           "name": "pages/icon/index",
           "pathName": "pages/icon/icon",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/gold/index",
+          "pathName": "pages/gold/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/goods/index",
+          "pathName": "pages/goods/index",
           "scene": null
         }
       ]

@@ -1,6 +1,7 @@
 import request from "../../utils/request";
 import {getStorage, getUserInfo1, updateUserInfo} from "../../utils/wxUtils";
 import {createInterstitialAd, createRewardedVideoAd} from "../../utils/adUtils";
+import {go} from "../../utils/common";
 const app = getApp()
 let rewardedVideoAd = null;
 let interstitialAd = null;
@@ -13,10 +14,14 @@ Page({
     rankPage:1,
     hasMore:true,
     rankList:[],
+    siteInfo:{},
   },
   onLoad(options) {
     this.createRewardedVideoAd();
     this.createInterstitialAd();
+    this.setData({
+      siteInfo:app.globalData.siteInfo,
+    })
     const {parentId} = options;
     if(parentId!=null){
      request("api/share",()=>{
@@ -37,7 +42,6 @@ Page({
       }
     });
   },
-
   login(){
     const root = this;
     wx.login({
@@ -76,6 +80,9 @@ Page({
 
   onShow() {
     this.init();
+    setTimeout(()=>{
+      this.interstitialAdShow();
+    },3e3);
   },
   init:function (){
     const root = this;
@@ -169,7 +176,6 @@ Page({
     })
   },
   createRewardedVideoAd:function (){
-    const root = this;
     rewardedVideoAd = createRewardedVideoAd({
       onClose:function (res){
         const {isEnded} = res;
@@ -181,8 +187,28 @@ Page({
       }
     });
   },
-  createInterstitialAd:function (){
-    const root = this;
-    interstitialAd = createInterstitialAd()
+  rewardedVideoAdShow:function (){
+    rewardedVideoAd.show().catch(() => {
+      rewardedVideoAd.load()
+          .then(() => rewardedVideoAd.show())
+          .catch(err => {
+            console.log('激励视频 广告显示失败')
+          })
+    })
   },
+  createInterstitialAd:function (){
+    interstitialAd = createInterstitialAd({})
+  },
+  interstitialAdShow:function (){
+    interstitialAd.show().catch(() => {
+      interstitialAd.load()
+          .then(() => interstitialAd.show())
+          .catch(err => {
+            console.log('激励视频 广告显示失败')
+          })
+    })
+  },
+  viewAd:function (){
+    go("/pages/gold/index");
+  }
 })

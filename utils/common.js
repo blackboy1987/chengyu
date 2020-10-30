@@ -35,15 +35,8 @@ export const modal = (title,callback) =>{
 
 export const adjustPoint=function (point,memo,callback){
     request('api/adjust',(result)=>{
-        const {code,msg} = result;
-        if(code===-1){
-            wx.showToast({
-                title:msg,
-                icon:'none',
-            });
-            if(callback){
-                callback(result);
-            }
+        if(callback){
+            callback(result);
         }
     },{
         data:{

@@ -4,163 +4,23 @@
 </cu-custom>
 <view class="container">
     <scroll-view class="list" style="height: 1100rpx" scroll-y="{{true}}">
-        <view class="item">
-            <image src="https://cdn.pixabay.com/photo/2017/06/26/02/40/fireworks-2442563_960_720.jpg"></image>
+        <view class="item" wx:for="{{products}}" wx:key="id">
+            <image src="{{item.image}}"></image>
             <view class="right">
-                <view class="title">10元话费</view>
+                <view class="title">{{item.name}}</view>
                 <view class="price">
-                    <text class="now">10.00</text>
-                    <text class="old">市场价：10.00</text>
+                    <text class="now">{{item.price}} 元</text>
+                    <text class="old">市场价：{{item.market_price}}</text>
                 </view>
-                <view class="bottom">
-                    <text class="info">剩余：99/100件</text>
-                    <button class="buy">立即兑换</button>
-                </view>
-            </view>
-        </view>
-        <view class="item">
-            <image src="https://cdn.pixabay.com/photo/2017/06/26/02/40/fireworks-2442563_960_720.jpg"></image>
-            <view class="right">
-                <view class="title">10元话费</view>
-                <view class="price">
-                    <text class="now">10.00</text>
-                    <text class="old">市场价：10.00</text>
-                </view>
-                <view class="bottom">
-                    <text class="info">剩余：99/100件</text>
-                    <button class="buy">立即兑换</button>
-                </view>
-            </view>
-        </view>
-        <view class="item">
-            <image src="https://cdn.pixabay.com/photo/2017/06/26/02/40/fireworks-2442563_960_720.jpg"></image>
-            <view class="right">
-                <view class="title">10元话费</view>
-                <view class="price">
-                    <text class="now">10.00</text>
-                    <text class="old">市场价：10.00</text>
-                </view>
-                <view class="bottom">
-                    <text class="info">剩余：99/100件</text>
-                    <button class="buy">立即兑换</button>
-                </view>
-            </view>
-        </view>
-        <view class="item">
-            <image src="https://cdn.pixabay.com/photo/2017/06/26/02/40/fireworks-2442563_960_720.jpg"></image>
-            <view class="right">
-                <view class="title">10元话费</view>
-                <view class="price">
-                    <text class="now">10.00</text>
-                    <text class="old">市场价：10.00</text>
-                </view>
-                <view class="bottom">
-                    <text class="info">剩余：99/100件</text>
-                    <button class="buy">立即兑换</button>
-                </view>
-            </view>
-        </view>
-        <view class="item">
-            <image src="https://cdn.pixabay.com/photo/2017/06/26/02/40/fireworks-2442563_960_720.jpg"></image>
-            <view class="right">
-                <view class="title">10元话费</view>
-                <view class="price">
-                    <text class="now">10.00</text>
-                    <text class="old">市场价：10.00</text>
-                </view>
-                <view class="bottom">
-                    <text class="info">剩余：99/100件</text>
-                    <button class="buy">立即兑换</button>
-                </view>
-            </view>
-        </view>
-        <view class="item">
-            <image src="https://cdn.pixabay.com/photo/2017/06/26/02/40/fireworks-2442563_960_720.jpg"></image>
-            <view class="right">
-                <view class="title">10元话费</view>
-                <view class="price">
-                    <text class="now">10.00</text>
-                    <text class="old">市场价：10.00</text>
-                </view>
-                <view class="bottom">
-                    <text class="info">剩余：99/100件</text>
-                    <button class="buy">立即兑换</button>
-                </view>
-            </view>
-        </view>
-        <view class="item">
-            <image src="https://cdn.pixabay.com/photo/2017/06/26/02/40/fireworks-2442563_960_720.jpg"></image>
-            <view class="right">
-                <view class="title">10元话费</view>
-                <view class="price">
-                    <text class="now">10.00</text>
-                    <text class="old">市场价：10.00</text>
-                </view>
-                <view class="bottom">
-                    <text class="info">剩余：99/100件</text>
-                    <button class="buy">立即兑换</button>
-                </view>
-            </view>
-        </view>
-        <view class="item">
-            <image src="https://cdn.pixabay.com/photo/2017/06/26/02/40/fireworks-2442563_960_720.jpg"></image>
-            <view class="right">
-                <view class="title">10元话费</view>
-                <view class="price">
-                    <text class="now">10.00</text>
-                    <text class="old">市场价：10.00</text>
-                </view>
-                <view class="bottom">
-                    <text class="info">剩余：99/100件</text>
-                    <button class="buy">立即兑换</button>
-                </view>
-            </view>
-        </view>
-        <view class="item">
-            <image src="https://cdn.pixabay.com/photo/2017/06/26/02/40/fireworks-2442563_960_720.jpg"></image>
-            <view class="right">
-                <view class="title">10元话费</view>
-                <view class="price">
-                    <text class="now">10.00</text>
-                    <text class="old">市场价：10.00</text>
-                </view>
-                <view class="bottom">
-                    <text class="info">剩余：99/100件</text>
-                    <button class="buy">立即兑换</button>
-                </view>
-            </view>
-        </view>
-        <view class="item">
-            <image src="https://cdn.pixabay.com/photo/2017/06/26/02/40/fireworks-2442563_960_720.jpg"></image>
-            <view class="right">
-                <view class="title">10元话费</view>
-                <view class="price">
-                    <text class="now">10.00</text>
-                    <text class="old">市场价：10.00</text>
-                </view>
-                <view class="bottom">
-                    <text class="info">剩余：99/100件</text>
-                    <button class="buy">立即兑换</button>
-                </view>
-            </view>
-        </view>
-        <view class="item">
-            <image src="https://cdn.pixabay.com/photo/2017/06/26/02/40/fireworks-2442563_960_720.jpg"></image>
-            <view class="right">
-                <view class="title">10元话费</view>
-                <view class="price">
-                    <text class="now">10.00</text>
-                    <text class="old">市场价：10.00</text>
-                </view>
-                <view class="bottom">
-                    <text class="info">剩余：99/100件</text>
-                    <button class="buy">立即兑换</button>
+                <view class="info">
+                    <text class="info">剩余：{{item.stock-item.sales}}/{{item.stock}}件</text>
+                    <view class="buy" bind:tap="buy" data-productid="{{item.id}}" data-price="{{item.price}}" data-sales="{{item.sales}}" data-stock="{{item.stock}}">立即兑换</view>
                 </view>
             </view>
         </view>
     </scroll-view>
     <view class="bottom">
-        <view>我的信息</view>
+        <view bind:tap="myInfo">我的信息</view>
         <view>兑换记录</view>
     </view>
 </view>

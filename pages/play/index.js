@@ -167,8 +167,8 @@ Page({
     onShareAppMessage:function (e){
         return {
             from:'button',
-            title: "来自于分享",
-            path: "/pages/index/index?parentId="+getStorage(""),
+            title: getStorage("siteInfo").name,
+            path: "/pages/index/index?parentId="+getStorage("userId"),
         };
     },
     closeRedPackage:function (e){

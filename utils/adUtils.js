@@ -15,8 +15,9 @@ export const errMap = {
 
 export const createRewardedVideoAd=function (callback){
     const siteInfo = getStorage("siteInfo");
+    console.log(siteInfo,"createRewardedVideoAd");
     if(wx.createRewardedVideoAd){
-        const rewardedVideoAd = wx.createRewardedVideoAd({ adUnitId: siteInfo.rewardedVideoAdId });
+        const rewardedVideoAd = wx.createRewardedVideoAd({ adUnitId: 'adunit-18e594b5d4fabe3c' });
         rewardedVideoAd.onLoad(() => {
             if(callback.onLoad){
                 callback.onLoad();
@@ -28,6 +29,9 @@ export const createRewardedVideoAd=function (callback){
             }
         });
         rewardedVideoAd.onClose((res) => {
+            rewardedVideoAd.offClose((e)=>{
+                console.log("rewardedVideoAd",e);
+            });
             if(callback.onClose){
                 callback.onClose(res);
             }
@@ -40,8 +44,9 @@ export const createRewardedVideoAd=function (callback){
 
 export const createInterstitialAd=function (callback){
     const siteInfo = getStorage("siteInfo");
+    console.log(siteInfo,"createRewardedVideoAd");
     if(wx.createInterstitialAd){
-        const interstitialAd = wx.createInterstitialAd({ adUnitId: siteInfo.interstitialAdId });
+        const interstitialAd = wx.createInterstitialAd({ adUnitId: 'adunit-f83096676f1a1054' });
         interstitialAd.onLoad(() => {
             if(callback.onLoad){
                 callback.onLoad();
@@ -53,6 +58,9 @@ export const createInterstitialAd=function (callback){
             }
         });
         interstitialAd.onClose((res) => {
+            interstitialAd.offClose((e)=>{
+                console.log("interstitialAd",e);
+            });
             if(callback.onClose){
                 callback.onClose(res);
             }

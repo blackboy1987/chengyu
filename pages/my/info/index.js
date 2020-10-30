@@ -11,13 +11,15 @@ Page({
         active:false,
     },
     onLoad: function (options) {
+        const root = this;
         getUserInfo1((data)=>{
             const {name,wechat,mobile} = data;
             this.setData({
                 name,
                 wechat,
                 mobile,
-            })
+            });
+            root.check();
         })
     },
     check:function(){
