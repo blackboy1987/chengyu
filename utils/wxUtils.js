@@ -1,4 +1,5 @@
 import request from "./request";
+import {Constants} from "./constants";
 
 export const setStorage=(key,value)=>{
     wx.setStorageSync(key,value);
@@ -34,6 +35,10 @@ export const siteInfo=(callback)=>{
         const {data} = result;
         setStorage("siteInfo",data);
         callback(data);
+    },{
+        data:{
+            siteInfoId:Constants.siteInfoId,
+        }
     });
 }
 

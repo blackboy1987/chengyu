@@ -50,7 +50,6 @@ Page({
                     productId:productid,
                 }
             })
-            console.log(data,productid,price,stock,sales);
         })
 
     }

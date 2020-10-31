@@ -2,7 +2,6 @@ import {Constants} from "./constants";
 import {getStorage} from "./wxUtils";
 
 const request = (url,callback,options={})=>{
-    console.log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
     wx.showLoading({
         title:"数据加载中",
         mask:true,

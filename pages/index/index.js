@@ -1,5 +1,5 @@
 import request from "../../utils/request";
-import {getStorage, getUserInfo1, updateUserInfo} from "../../utils/wxUtils";
+import {getStorage, getUserInfo1, siteInfo, updateUserInfo, wxGetSystemInfo, wxLogin} from "../../utils/wxUtils";
 import {createInterstitialAd, createRewardedVideoAd} from "../../utils/adUtils";
 import {go} from "../../utils/common";
 const app = getApp()
@@ -17,12 +17,10 @@ Page({
     siteInfo:{},
   },
   onLoad(options) {
-    this.createRewardedVideoAd();
-    this.createInterstitialAd();
-    this.setData({
-      siteInfo:app.globalData.siteInfo,
-    })
+    const root = this;
     const {parentId} = options;
+    root.createRewardedVideoAd();
+    root.createInterstitialAd();
     if(parentId!=null){
      request("api/share",()=>{
 
@@ -33,7 +31,11 @@ Page({
      })
     }
     this.init();
-    this.login();
+    wxLogin((data)=>{
+      root.setData({
+        userInfo:data,
+      })
+    });
     updateUserInfo((isAuth)=>{
       if(!isAuth){
         this.setData({
@@ -42,39 +44,15 @@ Page({
       }
     });
   },
-  login(){
+
+  login:function(){
     const root = this;
-    wx.login({
-      success (res) {
-        if (res.code) {
-          request("api/login",(res)=>{
-            console.log(res,"api/login");
-            app.globalData.userInfo = res.data;
-            root.setData({
-              userInfo:res.data,
-            })
-          },{
-            data:{
-              code:res.code,
-            }
-          })
-        } else {
-          wx.showModal({
-            title: '提示',
-            content: '登陆失败，请重新登陆',
-            success (res) {
-              if (res.confirm) {
-                root.login();
-              } else if (res.cancel) {
-                wx.showToast({
-                  title:"只有登陆了，才能进行答题哦",
-                  icon:'none',
-                })
-              }
-            }
-          })
-        }
-      }
+    wxLogin((data)=>{
+      app.globalData.isLogin=true;
+      app.globalData.userInfo=data;
+      root.setData({
+        userInfo:data,
+      })
     })
   },
 
@@ -86,6 +64,14 @@ Page({
   },
   init:function (){
     const root = this;
+    // 获取站点配置信息
+    siteInfo((data)=>{
+      app.globalData.siteInfo = data;
+      root.setData({
+        siteInfo:data,
+      })
+    })
+    // 远程获取用户信息
     getUserInfo1((data)=>{
       root.setData({
         userInfo:data,
@@ -210,5 +196,8 @@ Page({
   },
   viewAd:function (){
     go("/pages/gold/index");
+  },
+  buy:function () {
+    go("/pages/goods/index");
   }
 })

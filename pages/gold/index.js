@@ -44,7 +44,6 @@ Page({
                         icon:'none',
                         title:'广告未看完无法获取奖励',
                     })
-                    console.log("未看完");
                 }
             },
             onError:function (){
@@ -90,7 +89,6 @@ Page({
         }
         adjustPoint(siteInfo.browseVideoRewardPoint,"观看广告，奖励金币",(data)=>{
             const {userInfo} = data.data;
-            console.log(data,userInfo);
             if(userInfo&&Object.keys(userInfo).length>0){
                 root.setData({
                     userInfo:userInfo,
