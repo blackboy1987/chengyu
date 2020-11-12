@@ -4,9 +4,9 @@
     "pages/play/index",
     "pages/moreGame/index",
     "pages/question/index",
-    "pages/my/info/index",
     "pages/goods/index",
-    "pages/gold/index"
+    "pages/gold/index",
+    "pages/order/index"
   ],
   "window":{
     "backgroundTextStyle": "light",

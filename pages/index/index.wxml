@@ -3,18 +3,12 @@
   <view slot="content">{{siteInfo.name}}</view>
 </cu-custom>
 <view class="container">
-  <view class="notice">
+  <view class="notice" wx:wx:if="{{noticeList.length>0}}">
     <text class="cuIcon-notification lg text-gray"></text>
     <view class="text">
       <swiper style="height: 50rpx;color:#FFF; width: 600rpx" indicator-dots="{{false}}" autoplay="{{true}}" vertical="{{true}}" interval="{{4000}}" duration="{{500}}" circular="{{true}}">
-        <swiper-item wx:key="1">
-          <view class="swiper-item">恭喜用户  张三1 获得 1.00 元红包</view>
-        </swiper-item>
-        <swiper-item wx:key="2">
-          <view class="swiper-item">恭喜用户  张三2 获得 0.35 元红包</view>
-        </swiper-item>
-        <swiper-item wx:key="3">
-          <view class="swiper-item">恭喜用户  张三3 获得 0.24 元红包</view>
+        <swiper-item wx:key="*this" wx:for="{{noticeList}}">
+          <view class="swiper-item">恭喜用户  {{item.nickName}} 获得 {{item.credit}} 元红包</view>
         </swiper-item>
       </swiper>
     </view>
@@ -39,7 +33,6 @@
       </view>
     </view>
   </view>
-
   <view class="btn">
     <button bind:tap="toPlay">开始猜成语</button>
   </view>
@@ -62,8 +55,8 @@
     </view>
   </view>
 </view>
-<view class="ad">
-  <ad unit-id="adunit-5d392fcce4af1bf9"></ad>
+<view style="position:fixed;width:100%;bottom: 0;">
+  <ad-custom unit-id="adunit-4088233b68c4f746"></ad-custom>
 </view>
 <view class="cu-modal {{loginModalVisible ? 'show':''}} no-login-modal">
   <view class="cu-dialog">
@@ -91,7 +84,7 @@
     </view>
     <view class="padding-xl content1">
       <scroll-view bindscrolltolower="loadMore" style="height: 700rpx" scroll-y="{{true}}">
-        <view class="item" wx:for="{{rankList}}" wx:wx:key="{{index}}">
+        <view class="item" wx:for="{{rankList}}" wx:wx:key="*this">
           <view class="index">{{index+1}}</view>
           <image class="avatar" src="{{item.avatar_url || '/images/defaultAvatar.png'}}"></image>
           <view class="name">{{item.nick_name || '无名'}}</view>

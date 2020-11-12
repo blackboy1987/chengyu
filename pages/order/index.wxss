@@ -64,3 +64,7 @@
     text-align: center;
     border-radius: 40rpx;
 }
+
+.current{
+    color: #eb4e33;
+}

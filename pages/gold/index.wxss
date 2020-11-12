@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     padding:24rpx;
-    width: 90%;
+    width: 95%;
     border-radius: 16rpx;
     margin: 16rpx auto;
 }
@@ -28,7 +28,7 @@
     height: 80rpx;
 }
 .my{
-    width: 90%;
+    width: 95%;
     margin:16rpx auto;
 }
 .my>view{
@@ -43,7 +43,7 @@
 }
 
 .invited{
-    width: 90%;
+    width: 95%;
     margin:16rpx auto;
 }
 .invited>button{
@@ -56,7 +56,7 @@
 }
 
 .visitVideo{
-    width: 90%;
+    width: 95%;
     margin:16rpx auto;
 }
 .visitVideo>view{

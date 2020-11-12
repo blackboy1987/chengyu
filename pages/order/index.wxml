@@ -1,0 +1,21 @@
+<cu-custom isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">兑换记录</view>
+</cu-custom>
+<view class="container">
+    <view class="item" wx:for="{{products}}" wx:key="id">
+        <image src="{{item.product_image}}"></image>
+        <view class="right">
+            <view class="title">{{item.product_name}}</view>
+            <view class="price">
+                <text class="now">{{item.product_price}} 元</text>
+            </view>
+            <view class="info">
+                <text class="{{current===item.sn?'current':''}}" bind:tap="copy" data-sn="{{item.sn}}">{{item.sn}}</text>
+                <view class="buy" wx:if="{{item.status===0}}">待处理</view>
+                <view class="buy" wx:if="{{item.status===1}}">已完成</view>
+                <view class="buy" wx:if="{{item.status===2}}">已失败</view>
+            </view>
+        </view>
+    </view>
+</view>

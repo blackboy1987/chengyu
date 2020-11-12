@@ -13,10 +13,10 @@ export const errMap = {
 }
 
 
-export const createRewardedVideoAd=function (callback){
+export const createRewardedVideoAd=function (adUnitId,callback){
     const siteInfo = getStorage("siteInfo");
     if(wx.createRewardedVideoAd){
-        const rewardedVideoAd = wx.createRewardedVideoAd({ adUnitId: 'adunit-18e594b5d4fabe3c' });
+        const rewardedVideoAd = wx.createRewardedVideoAd({ adUnitId });
         rewardedVideoAd.onLoad(() => {
             if(callback.onLoad){
                 callback.onLoad();
@@ -41,10 +41,10 @@ export const createRewardedVideoAd=function (callback){
 
 }
 
-export const createInterstitialAd=function (callback){
+export const createInterstitialAd=function (adUnitId,callback){
     const siteInfo = getStorage("siteInfo");
     if(wx.createInterstitialAd){
-        const interstitialAd = wx.createInterstitialAd({ adUnitId: 'adunit-f83096676f1a1054' });
+        const interstitialAd = wx.createInterstitialAd({ adUnitId });
         interstitialAd.onLoad(() => {
             if(callback.onLoad){
                 callback.onLoad();

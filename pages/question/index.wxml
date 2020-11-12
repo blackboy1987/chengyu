@@ -3,15 +3,19 @@
     <view slot="content">常见问题</view>
 </cu-custom>
 <view class="container">
-    <view bind:tap="select" data-id="{{item.id}}" wx:for="{{questions}}" class="item {{current===item.id? 'current':''}}">
-        <view class="top">
-            <view class="title">{{item.title}}</view>
-            <text class="icon icon-sort"></text>
+    <scroll-view scroll-y style="height: 290px">
+        <view bind:tap="select" data-id="{{item.id}}" wx:for="{{questions}}" class="item {{current===item.id? 'current':''}}">
+            <view class="top">
+                <view class="title">{{item.title}}</view>
+                <text class="icon icon-sort"></text>
+            </view>
+            <view class="content">{{item.content}}</view>
         </view>
-        <view class="content">{{item.content}}</view>
-    </view>
+    </scroll-view>
     <view class="cu-bar btn">
         <button class="cu-btn" bindtap="back">返回答题</button>
     </view>
 </view>
-<ad-custom unit-id="adunit-4088233b68c4f746"></ad-custom>
+<view style="position:fixed;width:100%;bottom: 0;">
+    <ad unit-id="adunit-1f98f08e663fa1b7" ad-type="video" ad-theme="white"></ad>
+</view>

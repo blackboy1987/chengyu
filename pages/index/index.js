@@ -1,9 +1,15 @@
 import request from "../../utils/request";
-import {getStorage, getUserInfo1, siteInfo, updateUserInfo, wxGetSystemInfo, wxLogin} from "../../utils/wxUtils";
-import {createInterstitialAd, createRewardedVideoAd} from "../../utils/adUtils";
+import {
+  getStorage,
+  getUserInfo1,
+  rewardNotice,
+  siteInfo,
+  updateUserInfo,
+  wxLogin
+} from "../../utils/wxUtils";
+import {createInterstitialAd} from "../../utils/adUtils";
 import {go} from "../../utils/common";
 const app = getApp()
-let rewardedVideoAd = null;
 let interstitialAd = null;
 
 Page({
@@ -15,18 +21,21 @@ Page({
     hasMore:true,
     rankList:[],
     siteInfo:{},
+    noticeList:[],
   },
   onLoad(options) {
     const root = this;
     const {parentId} = options;
-    root.createRewardedVideoAd();
+    root.setData({
+      parentId,
+    })
     root.createInterstitialAd();
     if(parentId!=null){
      request("api/share",()=>{
 
      },{
        data:{
-         parentId
+         ...options
        }
      })
     }
@@ -38,11 +47,18 @@ Page({
     });
     updateUserInfo((isAuth)=>{
       if(!isAuth){
-        this.setData({
+        root.setData({
           loginModalVisible:true,
         })
       }
     });
+
+    rewardNotice(data=>{
+      console.log("noticeList",data);
+      root.setData({
+        noticeList:data,
+      })
+    })
   },
 
   login:function(){
@@ -80,7 +96,7 @@ Page({
     });
   },
   toPlay(){
-    const isAuth=app.globalData.userInfo.isAuth;
+    const isAuth=this.data.userInfo.isAuth;
     if(isAuth){
       wx.navigateTo({
         url:'/pages/play/index'
@@ -143,11 +159,15 @@ Page({
   },
   loadRank(page){
     const root = this;
+    const {rankList,hasMore} = root.data;
+    if(!hasMore){
+      return;
+    }
     request("api/rank",(result)=>{
       const {current,list,hasMore} = result.data;
       root.setData({
         rankPage:current,
-        rankList:list,
+        rankList:[...rankList||[],...list],
         hasMore,
       })
     },{
@@ -161,29 +181,11 @@ Page({
       url:'/pages/question/index'
     })
   },
-  createRewardedVideoAd:function (){
-    rewardedVideoAd = createRewardedVideoAd({
-      onClose:function (res){
-        const {isEnded} = res;
-        if(isEnded){
-          console.log("看完了");
-        }else{
-          console.log("未看完");
-        }
-      }
-    });
-  },
-  rewardedVideoAdShow:function (){
-    rewardedVideoAd.show().catch(() => {
-      rewardedVideoAd.load()
-          .then(() => rewardedVideoAd.show())
-          .catch(err => {
-            console.log('激励视频 广告显示失败')
-          })
-    })
-  },
   createInterstitialAd:function (){
-    interstitialAd = createInterstitialAd({})
+    if(interstitialAd){
+      return ;
+    }
+    interstitialAd = createInterstitialAd('adunit-f83096676f1a1054',{})
   },
   interstitialAdShow:function (){
     interstitialAd.show().catch(() => {
@@ -199,5 +201,12 @@ Page({
   },
   buy:function () {
     go("/pages/goods/index");
-  }
+  },
+  onShareAppMessage:function (e){
+    return {
+      from:'button',
+      title: getStorage("siteInfo").name,
+      path: "/pages/index/index?parentId="+getStorage("userId"),
+    };
+  },
 })

@@ -4,30 +4,16 @@
 </cu-custom>
 <view class="container">
     <scroll-view class="list" style="height: 600rpx" scroll-y="{{true}}">
-        <view class="item">
-            <image src="https://wx.qlogo.cn/mmhead/Q3auHgzwzM4KZ5pXxvpybiaBRRP3ueLjQSibug4EoaoAeEghSRWUdIPw/0"></image>
+        <view class="item" wx:for="{{moreGames}}" wx:key="*this">
+            <image src="{{item.logo}}"></image>
             <view class="right">
-                <view class="title">黎哥影院</view>
-                <view class="price">经典电影，电视剧</view>
+                <view class="title">{{item.name}}</view>
+                <view class="price">{{item.memo}}</view>
             </view>
-            <view bind:tap="go" class="go" data-appId="wx09eed9f5041cfd47">去看看</view>
-        </view>
-        <view class="item">
-            <image src="https://wx.qlogo.cn/mmhead/Q3auHgzwzM74ficibJnrEziawBLvONWEu9tCe4Nkn5mKppkZ2WHkbjkjg/0"></image>
-            <view class="right">
-                <view class="title">黎夏影视</view>
-                <view class="price">经典电影，电视剧。</view>
-            </view>
-            <view bind:tap="go" class="go" data-appId="wx4df549a3061f83e9">去看看</view>
-        </view>
-        <view class="item">
-            <image src="https://wx.qlogo.cn/mmhead/Q3auHgzwzM7etLQibmJLHSwRdpqCHzWib3T3RRnUgvxXsXc8byVIxnKg/0"></image>
-            <view class="right">
-                <view class="title">黎哥爱找茬</view>
-                <view class="price">没事就来茬茬茬茬，无聊就来茬茬茬茬。</view>
-            </view>
-            <view bind:tap="go" class="go" data-appId="wx17ad5f31816d0202">去看看</view>
+            <view bind:tap="go" class="go" data-appId="{{item.appId}}" data-path="{{item.path}}">去看看</view>
         </view>
     </scroll-view>
 </view>
-<ad unit-id="adunit-1f98f08e663fa1b7" ad-type="video" ad-theme="white"></ad>
+<view style="position:fixed;width:100%;bottom: 0;">
+    <ad unit-id="adunit-1f98f08e663fa1b7" ad-type="video" ad-theme="white"></ad>
+</view>

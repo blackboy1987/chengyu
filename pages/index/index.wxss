@@ -1,6 +1,6 @@
 .notice{
     background: rgba(116,94,192,.4);
-    width:90%;
+    width:95%;
     margin: 22rpx auto;
     height: 50rpx;
     line-height: 50rpx;
@@ -39,7 +39,7 @@
 .userinfo{
     margin: 22rpx auto;
     background: rgba(116,94,192,.4);
-    width:90%;
+    width:95%;
     display: flex;
     padding: 48rpx 24rpx;
     border-radius: 24rpx;
@@ -78,7 +78,7 @@
     margin-top: -8rpx;
 }
 .btn{
-    width: 90%;
+    width: 95%;
     margin:0 auto;
 }
 

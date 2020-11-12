@@ -42,6 +42,16 @@ export const siteInfo=(callback)=>{
     });
 }
 
+export const rewardNotice=(callback)=>{
+    request("api/reward_notice",(result)=>{
+        const {data} = result;
+        callback(data);
+    },{
+        data:{
+            siteInfoId:Constants.siteInfoId,
+        }
+    });
+}
 export const wxGetSystemInfo=(callback)=>{
     wx.getSystemInfo({
         success:(result)=>{

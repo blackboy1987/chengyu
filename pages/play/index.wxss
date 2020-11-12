@@ -27,7 +27,7 @@ page{
     background: rgba(116,94,192,.4);
 }
 .play>.info>.money>.text{
-    margin-left: 10rpx;
+    margin-left: 0;
 }
 
 .play>.info>.point{
@@ -42,7 +42,7 @@ page{
 }
 .play>.panel{
     background: #2b673c;
-    width: 90%;
+    width: 95%;
     height: 400rpx;
     margin:48rpx auto;
     border-radius: 16rpx;
@@ -62,7 +62,7 @@ page{
 
 .play>.btnGroup{
     display: flex;
-    width: 90%;
+    width: 95%;
     justify-content: space-around;
     margin: 0 auto;
 }
@@ -78,7 +78,7 @@ page{
 }
 
 .play>.answer{
-    width: 90%;
+    width: 95%;
     margin:48rpx auto;
     border-radius: 16rpx;
     display: flex;
@@ -156,7 +156,7 @@ page{
     font-size: 36rpx;
 }
 .modal-success button{
-    width: 90%;
+    width: 95%;
     margin-top: 96rpx;
     margin-bottom: 48rpx;
     background: #ea635d;

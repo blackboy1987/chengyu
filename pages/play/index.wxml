@@ -26,7 +26,7 @@
             <button class="btn1" open-type="share" bind:tap="share">
                 求助好友
             </button>
-            <button class="btn2" open-type="share" bind:tap="share">
+            <button class="btn2" bind:tap="gold">
                 获取金币
             </button>
         </view>
@@ -39,9 +39,7 @@
         </view>
     </view>
 </view>
-<view class="ad">
-    <ad unit-id="adunit-177ef912ea58ca3e" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad>
-</view>
+<ad unit-id="adunit-1f98f08e663fa1b7" ad-type="video" ad-theme="white"></ad>
 <view class="cu-modal {{success ? 'show':''}} modal-success">
     <view class="cu-dialog">
         <view class="padding-xl content">
@@ -79,10 +77,11 @@
                 <view class="info">您获得一个现金红包</view>
             </view>
             <view class="redPackageInfo">
-                <view class="open" bind:tap="open" wx:if="{{showRedPackage&&!openRedPackage}}">
-                    <view class="line">
+                <view class="open" wx:if="{{showRedPackage&&!openRedPackage}}">
+                    <view class="line" bind:tap="open">
                         <image style="width: 100rpx;height: 100rpx" src="/images/open.png"></image>
                     </view>
+                    <view wx:if="{{openRedPackageType===0}}" bind:tap="openVideo" style="color: #fff;font-size: 40rpx; margin-top: 60rpx">红包翻倍</view>
                 </view>
                 <view class="money" wx:if="{{showRedPackage&&(redPackageMoney>0)&&openRedPackage}}">
                     {{redPackageMoney}}元

@@ -49,10 +49,10 @@ const request = (url,callback,options={})=>{
         fail(err){
             wx.hideLoading();
             console.log(err.errMsg);
-            wx.showToast({
-                title:err.errMsg,
-                image:'/images/error.png'
-            });
+            wx.showModal({
+                title:"aaa",
+                content:err.errMsg,
+            })
         }
     })
 }

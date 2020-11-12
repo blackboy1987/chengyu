@@ -33,7 +33,7 @@
         <view>我的金币：{{userInfo.point}}</view>
     </view>
     <view class="invited">
-        <button style="width:100%;height:50px;line-height:50px;font-size:32rpx;font-weight: 600;border-radius:60rpx;" open-type="share" bind:tap="share">
+        <button style="width:100%;font-size:32rpx;font-weight: 600;border-radius:60rpx;" open-type="share" bind:tap="share">
             邀请朋友得 {{siteInfo.shareRewardPoint}} 金币
         </button>
     </view>
@@ -41,6 +41,6 @@
         <view>观看视频每次奖励 {{siteInfo.browseVideoRewardPoint}} 金币</view>
     </view>
 </view>
-<view class="ad">
+<view style="position:fixed;width:100%;bottom: 0;">
     <ad unit-id="adunit-1f98f08e663fa1b7" ad-type="video" ad-theme="white"></ad>
 </view>

@@ -4,15 +4,19 @@ let rewardedVideoAd = null;
 let interstitialAd = null;
 const app = getApp();
 
-import {createInterstitialAd, createRewardedVideoAd} from "../../utils/adUtils";
-import {getStorage, getUserInfo1} from "../../utils/wxUtils";
+import {createRewardedVideoAd,createInterstitialAd} from "../../utils/adUtils";
+import {getStorage, getUserInfo1, siteInfo} from "../../utils/wxUtils";
 
 Page({
     data: {
         userInfo:{},
-        siteInfo:{}
+        siteInfo:{},
+        visitVideoClick:true,
     },
     onLoad: function (options) {
+        const root = this;
+        root.createInterstitialAd();
+        this.createRewardedVideoAd();
         this.init();
     },
     onShow() {
@@ -20,21 +24,25 @@ Page({
     },
     init:function (){
         const root = this;
-        this.createRewardedVideoAd();
-        this.createInterstitialAd();
-        this.setData({
-            siteInfo:app.globalData.siteInfo
-        });
         getUserInfo1((data)=>{
             root.setData({
                 userInfo:data
+            });
+            app.globalData.userInfo = data;
+        })
+        siteInfo((data)=>{
+            root.setData({
+                siteInfo:data
             });
             app.globalData.siteInfo = data;
         })
     },
     createRewardedVideoAd:function (){
         const root = this;
-        rewardedVideoAd = createRewardedVideoAd({
+        if(rewardedVideoAd){
+          return ;
+        }
+        rewardedVideoAd = createRewardedVideoAd('adunit-18e594b5d4fabe3c',{
             onClose:function (res){
                 const {isEnded} = res;
                 if(isEnded){
@@ -43,29 +51,45 @@ Page({
                     wx.showToast({
                         icon:'none',
                         title:'广告未看完无法获取奖励',
-                    })
+                    });
+                    root.interstitialAdShow();
                 }
             },
             onError:function (){
                 wx.showToast({
                     icon:'none',
-                    title:'广告推送失败，系统赠送50积分',
+                    title:'暂无合适广告',
                 })
-                root.addPoint(50);
+                // root.addPoint(50);
             }
         });
     },
-    rewardedVideoAdShow:function (){
-        rewardedVideoAd.show().catch(() => {
+    rewardedVideoAdShow:function (callback){
+        rewardedVideoAd.show().then(()=>{
+            if(callback){
+                callback();
+            }
+        }).catch(() => {
             rewardedVideoAd.load()
-                .then(() => rewardedVideoAd.show())
+                .then(() => {
+                    if(callback){
+                        callback();
+                    }
+                    rewardedVideoAd.show()
+                })
                 .catch(err => {
+                    if(callback){
+                        callback();
+                    }
                     console.log('激励视频 广告显示失败')
                 })
         })
     },
     createInterstitialAd:function (){
-        interstitialAd = createInterstitialAd({})
+        if(interstitialAd){
+            return ;
+        }
+        interstitialAd = createInterstitialAd('adunit-f83096676f1a1054',{})
     },
     interstitialAdShow:function (){
         interstitialAd.show().catch(() => {
@@ -77,7 +101,24 @@ Page({
         })
     },
     visitVideo:function (){
-        this.rewardedVideoAdShow()
+        const root = this;
+        const {visitVideoClick} = root.data;
+        if(visitVideoClick){
+            root.setData({
+                visitVideoClick:false,
+            })
+            this.rewardedVideoAdShow(()=>{
+                root.setData({
+                    visitVideoClick:true
+                })
+            });
+        }else{
+            wx.showToast({
+                icon:'none',
+                title:'请不要频繁点击'
+            })
+        }
+
     },
     addPoint:function (point){
         const root = this;

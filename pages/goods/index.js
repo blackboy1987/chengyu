@@ -1,24 +1,42 @@
 import request from "../../utils/request";
 import {go} from "../../utils/common";
-import {getUserInfo1} from "../../utils/wxUtils";
+import {getUserInfo1, siteInfo} from "../../utils/wxUtils";
 
 const app = getApp();
 Page({
     data: {
         products:[],
+        siteInfo:{}
     },
     onLoad: function (options) {
         this.init();
     },
     init:function (){
-        request("api/product",(data)=>{
-            this.setData({
-                products:data.data,
+        const {siteInfo} = app.globalData;
+        this.setData({
+            siteInfo,
+        })
+        if(!siteInfo.isOpen){
+            wx.navigateTo({
+                url:'/pages/index/index'
             })
-        });
+        }else{
+            request("api/product",(data)=>{
+                this.setData({
+                    products:data.data,
+                })
+            });
+        }
+
+
+
+
     },
     myInfo:function (){
         go("/pages/my/info/index");
+    },
+    orderRecord:function (){
+        go("/pages/order/index");
     },
     buy:function (e){
         const root = this;

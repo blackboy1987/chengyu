@@ -1,5 +1,5 @@
 .item{
-    width: 90%;
+    width: 95%;
     background: #fff;
     margin:24rpx auto;
     border-radius: 12rpx;

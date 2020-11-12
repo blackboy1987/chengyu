@@ -1,8 +1,8 @@
-<cu-custom isBack="{{true}}">
+<cu-custom isBack="{{true}}" wx:if="{{siteInfo.isOpen}}">
     <view slot="backText">返回</view>
     <view slot="content">商品兑换</view>
 </cu-custom>
-<view class="container">
+<view class="container" wx:if="{{siteInfo.isOpen}}">
     <scroll-view class="list" style="height: 1100rpx" scroll-y="{{true}}">
         <view class="item" wx:for="{{products}}" wx:key="id">
             <image src="{{item.image}}"></image>
@@ -21,6 +21,6 @@
     </scroll-view>
     <view class="bottom">
         <view bind:tap="myInfo">我的信息</view>
-        <view>兑换记录</view>
+        <view bind:tap="orderRecord">兑换记录</view>
     </view>
 </view>
